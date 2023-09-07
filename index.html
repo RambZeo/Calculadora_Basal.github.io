@@ -10,10 +10,10 @@
             <div id="calculadora">
                 <div class="contenido">
                     <h1>Hidratación Basal</h1>
-                    <p class="item">Completa todos los datos</p>
-                    <input class="item" id="peso" type="number" placeholder="Peso en kg" />
+                    <p class="item">Ingresa el peso en kg.</p>
+                    <input class="item" id="peso" type="number" placeholder="0" />
                     <p class="item" id="error">Debe completar todos los datos</p>
-                    <button class="item" id="Calcular">Calcular</button>
+                    <button style="margin: 10px;" class="item" id="Calcular">Calcular</button>
                     <p class="item resultado" id="flu">71cc/h</p>
                     <p class="item resultado" id="man">m+m/2 : 105cc/h</p>
                 </div>
@@ -21,11 +21,23 @@
             <div id="detalle">
                 <div class="contenido">
                     <h1>¿Como se calcula?</h1>
-                    <ul>
-                        <li>De 0kg a 10kg, se calcula 100cc por cada kilo.</li>
-                        <li>Se suman 50cc por cada kilo de peso por arriba de 10kg. hasta 20kg</li>
-                        <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
-                    </ul>
+                    <h4>Cuando el niño tiene hasta 30kg: Se utiliza el calculo de Holliday-Segar.</h4>
+                    <div class="lista">
+                        <ol>
+                            <li>Cuando el niño tiene hasta 10kg: 100cc por cada kilo</li>
+                            <li>Luego, por cada kilo arriba de 10 y hasta 20kg, se suman 50cc</li>
+                            <li>Finalmente, por cada kilo arriba de 20kg se suman 20cc</li>
+                            <li>Para calcular el mantenimiento, dividimos el resultado en 24 para conocer los cc necesarios por hora.</li>
+                            <li>El medio mantenimiento se obtiene multiplicando el mantenimiento x 1.5</li>
+                        </ol>
+                    </div>
+                    <h4>Cuando el niño pesa mas de 30kg, se utiliza el Método de superficie corporal:</h4>
+                    <div class="lista">
+                        <ol>
+                            <li>Superficie corporal = ( (peso * 4) + 7) / (peso + 90)</li>
+                            <li>Este resultado se multiplica por 1500 o por 2000 para hallar el valor del volumen diario en cc, y el medico decide cual de los dos resultados utilizar.</li>
+                        </ol>
+                    </div>
                  </div>
             </div>
         </div>

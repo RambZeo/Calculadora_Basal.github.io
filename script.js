@@ -10,12 +10,10 @@ CALCULAR.addEventListener('click', () => {
     if (DATO > 0){
         ERROR.style.display = 'none';
         let flujo = calcFlujo(DATO);
-        let mantenimiento = Math.round (flujo*1.5);
-        let flujosc = calcflujosc(DATO)
-        let mantenimientosc = flujosc;
+        let mantenimiento = flujo*1.5;
         FLU.innerHTML = "Volumen Diario: " + flujo + ' cc';
-        MANT.innerHTML = "Mantenimiento: " + (flujo/24) + " cc/h";
-        MAN.innerHTML = 'Mantenimiento Medio: ' + (mantenimiento/24) + ' cc/h';
+        MANT.innerHTML = "Mantenimiento: " + Math.round(flujo/24) + " cc/h";
+        MAN.innerHTML = 'Mantenimiento Medio: ' + Math.round(mantenimiento/24) + ' cc/h';
         FLU.style.display = 'block';
         MAN.style.display = 'block';
         MANT.style.display = 'block';
@@ -30,7 +28,7 @@ function calcFlujo(peso){
     let flujo = 0;
     if (peso<=10){
         let aux = 100;
-        flujo = (aux*peso)/24;
+        flujo = (aux*peso);
     } 
     if (peso<=20 && peso>10){
         let base = peso-10;
@@ -46,16 +44,5 @@ function calcFlujo(peso){
         let cc20 = (aux*base);
         flujo = ccbase+cc20;
     }
-    return Math.round (flujo);
-}
-function calcFlujosc(peso){
-    let flujosc = 0;
-    if (peso>30){
-        aux1 = peso*4;
-        aux2 = aux1+7;
-        aux3 = peso+90;
-        flujosc = aux2/aux3;
-    }
-    return 
-    Math.round (flujosc)
+    return flujo;
 }
